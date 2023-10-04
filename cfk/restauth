@@ -1,0 +1,29 @@
+authorization:
+  type: rbac
+  kafkaRestClassRef:
+    name: default
+    namespace: confluent
+  required: true
+                Description:  authorization specifies the RBAC configuration for the KafkaRestProxy cluster.
+                Properties:
+                  Kafka Rest Class Ref:
+                    Description:  kafkaRestClassRef references the KafkaRestClass which specifies the Kafka REST API connection configuration.
+                    Properties:
+                      Name:
+                        Description:  name specifies the name of the KafkaRestClass application resource.
+                        Min Length:   1
+                        Type:         string
+                      Namespace:
+                        Description:  namespace specifies the namespace of the KafkaRestClass.
+                        Type:         string
+                    Required:
+                      name
+                    Type:  object
+                  Type:
+                    Description:  type specifies the client-side authorization type. The valid option is `rbac`.
+                    Enum:
+                      rbac
+                    Type:  string
+                Required:
+                  type
+                Type:  object

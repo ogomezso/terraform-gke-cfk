@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: kcat
+  name: kcat
+  namespace: confluent
+spec:
+  containers:
+  - image: edenhill/kcat:1.7.1
+    name: nginx
+    resources: {}
+    command:
+    - sh
+    - -c
+    - "exec tail -f /dev/null"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  
+status: {}

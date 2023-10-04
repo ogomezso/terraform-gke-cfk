@@ -1,0 +1,3 @@
+### ldap.txt content example
+username=cn=mds,dc=confluent,dc=acme,dc=com
+password=Developer!

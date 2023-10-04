@@ -1,0 +1,21 @@
+{
+  "CN": "external.kafka.confluent.access",
+  "hosts": [
+    "bootstrap.35.242.166.238.nip.io",
+    "broker0.35.242.166.238.nip.io",
+    "broker1.35.242.166.238.nip.io",
+    "broker2.35.242.166.238.nip.io",
+    "*.35.242.166.238.nip.io"
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "Universe",
+      "ST": "Pangea",
+      "L": "Earth"
+    }
+  ]
+}

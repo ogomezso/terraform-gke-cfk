@@ -1,0 +1,16 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaRestClass
+metadata:
+  name: default
+  namespace: confluent
+  labels:
+    component: restclass
+spec:
+  kafkaClusterRef:
+    name: kafka
+    namespace: confluent
+  kafkaRest:
+    authentication:
+      type: bearer
+      bearer:
+        secretRef: kafka-bearer
