@@ -21,14 +21,29 @@ spec:
   authorization:
     type: rbac
     superUsers:
+    - User:admin
     - User:kafka
   listeners:
-    internal:
+    replication:
       authentication:
         type: plain
+        jaasConfigPassThrough:
+          secretRef: kafka-sasl-users
+      tls:
+        enabled: true
+    # internal:
+    #   authentication:
+    #     type: plain
+    #     jaasConfigPassThrough:
+    #       secretRef: kafka-sasl-users
+    #   tls:
+    #     enabled: true
+    internal:
+      authentication:
+        type: ldap
         jaasConfig:
           # User password of the interbroker user
-          secretRef: kafka-json
+          secretRef: kafka-internal
       tls:
         enabled: true
     external:
